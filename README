@@ -1,7 +1,63 @@
-== Getting Started
+=== Getting Started
 
 Run these commands to try it out.
 
   bundle
   rake db:setup
   rails s
+
+=== API
+
+== GET /videos.json
+Example request:
+	GET /videos.json
+
+Example response:
+	[{
+	"created_at":"2012-01-19T23:51:15Z",
+	"id":44,
+	"name":"1",
+	"updated_at":"2012-01-19T23:51:15Z",
+	"uploaded_video_content_type":"video/quicktime",
+	"uploaded_video_file_name":"test.mov",
+	"uploaded_video_file_size":9781678,
+	"uploaded_video_updated_at":"2012-01-19T23:51:15Z",
+	"preview_url":"/system/uploaded_videos/44/preview/test.jpg?1327017075",
+	"flv_url":"/system/uploaded_videos/44/flv/test.flv?1327017075"},
+	…]
+
+== GET /videos/:id.json
+Example request:
+	GET /videos/48.json
+
+Example response:
+	{
+	"created_at":"2012-01-20T02:07:33Z",
+	"id":48,
+	"name":"4",
+	"updated_at":"2012-01-20T02:07:33Z",
+	"uploaded_video_content_type":"video/quicktime",
+	"uploaded_video_file_name":"IMG_0192.MOV",
+	"uploaded_video_file_size":224815088,
+	"uploaded_video_updated_at":"2012-01-20T02:07:24Z",
+	"preview_url":"/system/uploaded_videos/48/preview/IMG_0192.jpg?1327025244",
+	"flv_url":"/system/uploaded_videos/48/flv/IMG_0192.flv?1327025244"
+	}
+
+== PUT /videos/:id.json
+Example request:
+	PUT /videos/25.json
+
+Example response:
+	status: 200
+
+== POST /videos.json
+Example request via curl:
+curl -F "video[uploaded_video]=@/Users/matsarello/Desktop/test/100_1577.MOV;type=video/quicktime" -F "video[name]=test" -X POST http://localhost:3000/videos
+
+== DELETE /videos/:id.json
+Example request:
+	DELETE /videos/54.json
+
+Example response:
+	status: 200
