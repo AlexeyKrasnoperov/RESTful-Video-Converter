@@ -1,8 +1,8 @@
 class Video < ActiveRecord::Base
 	
-	has_attached_file :uploaded_video, :styles => { 
-      :flv => { :geometry => "640x480", :format => 'flv' },
-      :preview => { :geometry => "100x100#", :format => 'jpg', :time => 1 }
+	has_attached_file :uploaded_video, :styles => {
+			:preview => { :geometry => "100x100#", :format => 'gif', :time => 1 },
+      :flv => { :geometry => "640x480", :format => 'flv' }
     }, :processors => [:ffmpeg]
 		validates_attachment_content_type :uploaded_video, :content_type => ['video/x-msvideo','video/avi','video/quicktime','video/3gpp','video/x-ms-wmv','video/mp4','video/mpeg']
     process_in_background :uploaded_video

@@ -10,6 +10,7 @@
 
 <% @videos.each do |video| %>
   <tr>
+  	<td><%= image_tag video.uploaded_video.url(:preview) %></td>
     <td><%= video.name %></td>
     <td><%= link_to 'Show', video %></td>
     <td><%= link_to 'Edit', edit_video_path(video) %></td>
