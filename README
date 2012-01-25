@@ -5,6 +5,11 @@ Run these commands to try it out.
   bundle
   rake db:setup
   rails s
+  rake jobs:work
+
+If you want to try it on any OS other than MacOS you should add this to your Gemfile:
+	gem 'execjs'
+	gem 'therubyracer'
 
 === API
 
