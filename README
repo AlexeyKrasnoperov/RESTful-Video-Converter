@@ -16,7 +16,7 @@ Example response:
 	[{
 	"created_at":"2012-01-19T23:51:15Z",
 	"id":44,
-	"name":"1",
+	"name":"David Blaine",
 	"updated_at":"2012-01-19T23:51:15Z",
 	"uploaded_video_content_type":"video/quicktime",
 	"uploaded_video_file_name":"test.mov",
@@ -34,7 +34,7 @@ Example response:
 	{
 	"created_at":"2012-01-20T02:07:33Z",
 	"id":48,
-	"name":"4",
+	"name":"Chuck Norris is dead",
 	"updated_at":"2012-01-20T02:07:33Z",
 	"uploaded_video_content_type":"video/quicktime",
 	"uploaded_video_file_name":"IMG_0192.MOV",
@@ -46,14 +46,39 @@ Example response:
 
 == PUT /videos/:id.json
 Example request:
-	PUT /videos/25.json
+	PUT /videos/48.json
 
 Example response:
-	status: 200
+	{
+	"created_at":"2012-01-20T02:07:33Z",
+	"id":48,
+	"name":"Chuck Norris can't be dead",
+	"updated_at":"2012-01-20T02:09:03Z",
+	"uploaded_video_content_type":"video/quicktime",
+	"uploaded_video_file_name":"IMG_0192.MOV",
+	"uploaded_video_file_size":224815088,
+	"uploaded_video_updated_at":"2012-01-20T02:07:24Z",
+	"preview_url":"/system/uploaded_videos/48/preview/IMG_0192.jpg?1327025244",
+	"flv_url":"/system/uploaded_videos/48/flv/IMG_0192.flv?1327025244"
+	}
 
 == POST /videos.json
 Example request via curl:
 curl -F "video[uploaded_video]=@/Users/matsarello/Desktop/test/100_1577.MOV;type=video/quicktime" -F "video[name]=test" -X POST http://localhost:3000/videos
+
+Example response:
+	{
+	"created_at":"2012-01-20T02:07:33Z",
+	"id":54,
+	"name":"New video about Justin Bieber",
+	"updated_at":"2012-01-20T02:08:35Z",
+	"uploaded_video_content_type":"video/quicktime",
+	"uploaded_video_file_name":"IMG_0245.MOV",
+	"uploaded_video_file_size":235752248,
+	"uploaded_video_updated_at":"2012-01-20T02:09:34Z",
+	"preview_url":"/system/uploaded_videos/54/preview/IMG_0245.jpg?1327025244",
+	"flv_url":"/system/uploaded_videos/54/flv/IMG_0245.flv?1327025244"
+	}
 
 == DELETE /videos/:id.json
 Example request:
