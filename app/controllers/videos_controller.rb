@@ -32,7 +32,11 @@ class VideosController < ApplicationController
 	def update
 		@video = Video.find(params[:id])
 		@video.update_attributes(params[:video])
-		respond_with @video
+		respond_to do |format|
+			format.html
+			format.xml { render :xml => @video }
+			format.json { render :json => @video }
+		end
 	end
 
 	# DELETE /videos/1[.json/.xml]
