@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120126193623) do
+ActiveRecord::Schema.define(:version => 20120120132317) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(:version => 20120126193623) do
     t.integer  "uploaded_video_file_size"
     t.datetime "uploaded_video_updated_at"
     t.string   "flv_converted"
-    t.string   "uploaded_video_meta"
   end
 
 end
