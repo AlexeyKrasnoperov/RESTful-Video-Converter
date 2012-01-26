@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @video.name %>
-  <%= video_tag @video.uploaded_video.url %>
-</p>
+<div>
+  <p>Name: <%= @video.name %></p>
+  <%= image_tag @video.uploaded_video.url(:preview) %>
+  <p><a href="<%= @video.uploaded_video.url %>">Original video</a></p>
+  <p><a href="<%= @video.uploaded_video.url(:flv) %>">Converted flv</a></p>
+</div>
 
 
 <%= link_to 'Edit', edit_video_path(@video) %> |
