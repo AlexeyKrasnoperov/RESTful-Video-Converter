@@ -1,6 +1,6 @@
 RestVideoConverter::Application.routes.draw do
   resources :videos
-# 	match "/delayed_job" => DelayedJobWeb, anchor: false
+  root :to => 'videos#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -3,14 +3,12 @@ class VideosController < ApplicationController
 	
 	# GET /videos[.json/.xml]
 	def index
-		@videos = Video.all
-		respond_with @videos
+		respond_with( @videos = Video.all )
 	end
 
 	# GET /videos/1[.json/.xml]
 	def show
-		@video = Video.find(params[:id])
-		respond_with @video
+		respond_with( @video = Video.find(params[:id]) )
 	end
 
 	# GET /videos/new[.json/.xml]
@@ -27,7 +25,7 @@ class VideosController < ApplicationController
 	def create
 		@video = Video.new(params[:video])
 		@video.save
-		respond_with @video
+		respond_with( @video, :location => videos_path )
 	end
 
 	# PUT /videos/1[.json/.xml]

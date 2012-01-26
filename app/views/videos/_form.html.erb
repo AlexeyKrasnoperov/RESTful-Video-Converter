@@ -10,15 +10,21 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+<fieldset>
+  <div class="clearfix">
+    <%= f.label :name %>
+    <div class="input">
+    	<%= f.text_field :name %>
+    </div>
   </div>
-  <div>
-  	<%= f.file_field :uploaded_video %>
+  <div class="clearfix">
+  	<%= f.label( :uploaded_video, "Video Attachment" ) %>
+  	<div class="input">
+	  	<%= f.file_field :uploaded_video %>
+  	</div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Upload video", :class => "btn primary" %>
   </div>
+</fieldset>
 <% end %>

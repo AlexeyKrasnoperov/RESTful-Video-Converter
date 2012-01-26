@@ -1,24 +1,27 @@
-<h1>Listing videos</h1>
+<div class="page-header"><h1>Listing videos</h1></div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="row">
+	<div class="span9">
 
-<% @videos.each do |video| %>
-  <tr>
-  	<td><%= image_tag video.uploaded_video.url(:preview) %></td>
-    <td><%= video.name %></td>
-    <td><%= link_to 'Show', video %></td>
-    <td><%= link_to 'Edit', edit_video_path(video) %></td>
-    <td><%= link_to 'Destroy', video, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Video', new_video_path %>
+		<table class="bordered-table">
+		  <tr>
+		  	<th>Preview</th>
+		    <th>Name</th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+		
+		<% @videos.each do |video| %>
+		  <tr>
+		  	<td><%= image_tag video.uploaded_video.url(:preview) %></td>
+		    <td><%= video.name %></td>
+		    <td><%= link_to 'Show', video %></td>
+		    <td><%= link_to 'Edit', edit_video_path(video) %></td>
+		    <td><%= link_to 'Destroy', video, confirm: 'Are you sure?', method: :delete %></td>
+		  </tr>
+		<% end %>
+		</table>
+		
+	</div>
+</div>

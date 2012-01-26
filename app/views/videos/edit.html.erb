@@ -1,6 +1,11 @@
-<h1>Editing video</h1>
+<div class="page-header"><h1>Editing video</h1></div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @video %> |
-<%= link_to 'Back', videos_path %>
+<div class="row">
+	<div class="span7">
+		<%= render 'form' %>
+	</div>
+	<div class="span2">
+		<p><%= link_to 'Show', @video %></p>
+		<p><%= link_to 'Back', videos_path %></p>
+	</div>
+</div>
