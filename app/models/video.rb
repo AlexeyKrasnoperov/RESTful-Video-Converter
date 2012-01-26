@@ -4,11 +4,11 @@ class Video < ActiveRecord::Base
 			:preview => { :geometry => "100x100#", :format => 'jpg', :time => 1 },
       :flv => { :geometry => "640x480", :format => 'flv' }
     }, :processors => [:ffmpeg]
-    before_uploaded_video_post_process :start_converting
+    before_post_process :start_converting
     after_post_process :end_converting
 		validates_attachment_content_type :uploaded_video, :content_type => ['video/x-msvideo','video/avi','video/quicktime','video/3gpp','video/x-ms-wmv','video/mp4','video/mpeg']
 		validates_attachment_presence :uploaded_video
-#     process_in_background :uploaded_video
+    process_in_background :uploaded_video
     
 
 	def as_json(options={})
