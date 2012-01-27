@@ -22,6 +22,7 @@ Example request:
 
 Example response:
   [{
+  "convertation_status":"ended"
   "created_at":"2012-01-19T23:51:15Z",
   "id":44,
   "name":"David Blaine",
@@ -40,6 +41,7 @@ Example request:
 
 Example response:
   {
+  "convertation_status":"started"
   "created_at":"2012-01-20T02:07:33Z",
   "id":48,
   "name":"Chuck Norris is dead",
@@ -58,6 +60,7 @@ Example request:
 
 Example response:
   {
+  "convertation_status":"ended"
   "created_at":"2012-01-20T02:07:33Z",
   "id":48,
   "name":"Chuck Norris can't be dead",
@@ -76,6 +79,7 @@ POST /videos.json
 
 Example response:
   {
+  "convertation_status":null
   "created_at":"2012-01-20T02:07:33Z",
   "id":54,
   "name":"New video about Justin Bieber",

@@ -26,6 +26,7 @@ class VideosController < ApplicationController
 		@video = Video.new(params[:video])
 		@video.save
 		respond_with( @video, :location => videos_path )
+		Video.delay.convert(@video.id)
 	end
 
 	# PUT /videos/1[.json/.xml]
